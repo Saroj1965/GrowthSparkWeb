@@ -1,0 +1,285 @@
+"use client";
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { 
+  Monitor, Layout, Video, Settings, ClipboardCheck, 
+  Truck, Lightbulb, ChevronRight, CheckCircle2, ArrowRight 
+} from 'lucide-react';
+import Navbar from '@/components/Navbar';
+
+export default function Home() {
+  const [activeNeed, setActiveNeed] = useState<string | null>(null);
+
+  const services = [
+    {
+      id: 1,
+      icon: <Monitor className="w-6 h-6" />,
+      title: "Business Website Design",
+      desc: "Professional, responsive websites designed around your business and customers.",
+      details: "High-conversion landing pages, portfolio sites, and service-based layouts optimized for mobile and SEO."
+    },
+    {
+      id: 2,
+      icon: <Layout className="w-6 h-6" />,
+      title: "Founder Dashboards",
+      desc: "Simple dashboards that bring business information and KPIs into one place.",
+      details: "Centralized tracking for projects, tasks, and team overview for faster decision-making."
+    },
+    {
+      id: 3,
+      icon: <Video className="w-6 h-6" />,
+      title: "AI Video Editing",
+      desc: "Create engaging business and social media videos using modern AI workflows.",
+      details: "Short-form content, explainer videos, and repurposing existing assets with high-quality AI visuals."
+    },
+    {
+      id: 4,
+      icon: <Settings className="w-6 h-6" />,
+      title: "Systems & Organization",
+      desc: "Turn scattered information and processes into simple, organized systems.",
+      details: "Digital document structuring, workflow automation, and efficiency audits."
+    },
+    {
+      id: 5,
+      icon: <ClipboardCheck className="w-6 h-6" />,
+      title: "Planning & Execution",
+      desc: "Convert ideas and priorities into structured plans and measurable execution.",
+      details: "Project coordination, task tracking, and hands-on follow-up to keep your projects moving."
+    },
+    {
+      id: 6,
+      icon: <Truck className="w-6 h-6" />,
+      title: "Logistics",
+      desc: "Coordinate meetings, events, travel, and operational details.",
+      details: "Vendor management, travel scheduling, and operational support for your business events."
+    },
+    {
+      id: 7,
+      icon: <Lightbulb className="w-6 h-6" />,
+      title: "Business Understanding",
+      desc: "Look beyond individual tasks to understand the business objective.",
+      details: "Thinking like a partner, not a freelancer. Connecting people, processes, and technology."
+    }
+  ];
+
+  const needs = [
+    { label: "I need a website", response: "Let's turn your business into a clear, professional digital presence." },
+    { label: "I need a founder dashboard", response: "We'll build a central 'command center' for your business metrics." },
+    { label: "I need better organization", response: "We'll clean up your workflows and structure your digital assets." },
+    { label: "I need videos/content", response: "We'll leverage AI tools to create high-impact video content fast." },
+    { label: "I have an idea and don't know where to start", response: "Let's map out your idea and create a practical execution plan." }
+  ];
+
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+
+      {/* HERO SECTION */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-brand-primary font-bold tracking-wider text-sm uppercase">Web • AI • Systems • Execution</span>
+            <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight text-slate-900">
+              Turning Business Ideas Into <span className="text-brand-primary">Digital Reality.</span>
+            </h1>
+            <p className="mt-6 text-lg text-slate-600 max-w-lg leading-relaxed">
+              GrowthSparkWeb helps founders and growing businesses build, organize and execute — from business websites and founder dashboards to AI-powered content, planning and operational support.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="#contact" className="bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-center hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+                Let's Work Together
+              </a>
+              <a href="#services" className="border border-slate-300 text-slate-700 px-8 py-4 rounded-full font-bold text-center hover:bg-slate-50 transition-all">
+                Explore Services
+              </a>
+            </div>
+          </motion.div>
+          <div className="hidden lg:flex justify-center relative">
+            <div className="w-80 h-80 bg-blue-100 rounded-3xl rotate-6 absolute -z-10 animate-pulse"></div>
+            <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 grid gap-4 w-72">
+               {['Website', 'Dashboard', 'Content', 'Systems', 'Execution'].map((item, i) => (
+                 <div key={item} className="flex items-center gap-3 text-slate-700 font-medium">
+                   <CheckCircle2 className="text-brand-primary w-5 h-5" /> {item}
+                 </div>
+               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRODUCTION SECTION */}
+      <section className="py-20 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-900">More Than a Website. A Practical Business Partner.</h2>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+            A good website is only one part of a growing business. GrowthSparkWeb brings together digital creation, organization and execution to help founders move from ideas to action.
+          </p>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { t: "Build", d: "Create websites, dashboards and digital assets." },
+              { t: "Organize", d: "Bring information, systems and workflows together." },
+              { t: "Execute", d: "Turn plans into completed actions." },
+              { t: "Grow", d: "Create a stronger digital foundation." }
+            ].map((item) => (
+              <div key={item.t} className="p-6 bg-brand-light rounded-2xl text-left border border-slate-50">
+                <h3 className="font-bold text-slate-900 text-lg mb-2">{item.t}</h3>
+                <p className="text-slate-600 text-sm">{item.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES SECTION */}
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">What I Can Help You With</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((s) => (
+            <ServiceCard key={s.id} {...s} />
+          ))}
+        </div>
+      </section>
+
+      {/* THE WAY I THINK */}
+      <section className="py-20 bg-slate-900 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-6">Technology Is Useful. Understanding the Business Is Essential.</h2>
+          <p className="text-slate-400 max-w-3xl mx-auto mb-16 text-lg">
+            Every business has different priorities. The goal is not to add more tools or complexity. The goal is to understand what needs to happen and create the right solution.
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-4 text-sm md:text-base font-bold">
+            {["Understand", "Plan", "Build", "Organize", "Execute", "Improve"].map((step, i) => (
+              <div key={step} className="flex items-center gap-4">
+                <span className="bg-brand-primary px-4 py-2 rounded-lg">{step}</span>
+                {i < 5 && <ArrowRight className="text-slate-600 hidden sm:block" />}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INTERACTIVE NEED SECTION */}
+      <section className="py-20 bg-white border-b border-slate-100">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">What Are You Trying to Get Done?</h2>
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {needs.map((need) => (
+              <button
+                key={need.label}
+                onClick={() => setActiveNeed(need.label)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+                  activeNeed === need.label ? 'bg-brand-primary text-white border-brand-primary' : 'bg-white text-slate-600 border-slate-200 hover:border-brand-primary'
+                }`}
+              >
+                {need.label}
+              </button>
+            ))}
+          </div>
+          <AnimatePresence mode="wait">
+            {activeNeed && (
+              <motion.div
+                key={activeNeed}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="bg-brand-light p-8 rounded-3xl border border-blue-100 shadow-sm"
+              >
+                <p className="text-xl text-slate-800 font-medium mb-6">
+                  "{needs.find(n => n.label === activeNeed)?.response}"
+                </p>
+                <a href="#contact" className="text-brand-primary font-bold flex items-center justify-center gap-2 hover:underline">
+                  Start a Conversation <ChevronRight size={18} />
+                </a>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
+          <p className="text-slate-600">Tell me what you're working on, and let's identify how to build or execute it.</p>
+        </div>
+        <form className="space-y-6 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
+              <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-primary outline-none" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
+              <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-primary outline-none" />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">What do you need help with?</label>
+            <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-primary outline-none bg-white">
+              <option>Business Website</option>
+              <option>Founder Dashboard</option>
+              <option>AI Video Content</option>
+              <option>Business Organization</option>
+              <option>Planning & Execution</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
+            <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-primary outline-none"></textarea>
+          </div>
+          <button className="w-full bg-brand-primary text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100">
+            Send Enquiry
+          </button>
+        </form>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-12 px-4 border-t border-slate-200 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div>
+            <div className="font-bold text-xl text-brand-primary mb-2">GrowthSparkWeb</div>
+            <p className="text-slate-500 text-sm">Build. Organize. Execute. Grow.</p>
+          </div>
+          <div className="flex gap-8 text-sm font-medium text-slate-600">
+            <a href="#" className="hover:text-brand-primary">Home</a>
+            <a href="#services" className="hover:text-brand-primary">Services</a>
+            <a href="#about" className="hover:text-brand-primary">About</a>
+            <a href="#contact" className="hover:text-brand-primary">Contact</a>
+          </div>
+          <div className="text-slate-400 text-xs">
+            © 2026 GrowthSparkWeb. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
+
+function ServiceCard({ icon, title, desc, details }: any) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div 
+      className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <div className="text-brand-primary mb-6">{icon}</div>
+      <h3 className="text-xl font-bold text-slate-900 mb-3">{title}</h3>
+      <p className="text-slate-600 text-sm leading-relaxed mb-4">{desc}</p>
+      
+      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-40' : 'max-h-0'}`}>
+        <p className="pt-4 border-t border-slate-50 text-sm text-slate-500 italic">
+          {details}
+        </p>
+      </div>
+      
+      <button className="mt-4 text-brand-primary text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+        {isOpen ? 'Less' : 'Learn More'} <ChevronRight className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
+      </button>
+    </div>
+  );
+}
