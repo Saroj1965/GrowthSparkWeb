@@ -1,0 +1,7 @@
+{
+  "name": "GrowthSparkWeb",
+  "description": "GrowthSparkWeb helps founders and growing businesses build professional websites, founder dashboards, AI-powered content and practical systems for planning, organization and execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
