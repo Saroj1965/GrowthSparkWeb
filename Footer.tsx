@@ -68,11 +68,11 @@ export const Footer: React.FC = () => {
                 Connect
               </span>
               <p className="text-xs text-slate-400 mb-3">
-                hello@growthsparkweb.com
+                customerservice@growthsparkweb.com
               </p>
               <div className="flex items-center gap-2">
                 <a
-                  href="mailto:hello@growthsparkweb.com"
+                  href="mailto:customerservice@growthsparkweb.com"
                   className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
                   aria-label="Email"
                 >
