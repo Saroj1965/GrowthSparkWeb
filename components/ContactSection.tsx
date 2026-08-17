@@ -142,7 +142,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <div className="space-y-3.5 pt-2">
                 {/* Email Placeholder */}
                 <a
-                  href="mailto:hello@growthsparkweb.com"
+                  href="mailto:customerservice@growthsparkweb.com"
                   id="contact-email-link"
                   className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-sky-300 hover:shadow-xs transition-all group cursor-pointer"
                 >
@@ -154,14 +154,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       Email Inquiry
                     </span>
                     <span className="text-sm font-semibold text-slate-900 group-hover:text-sky-600 transition-colors">
-                      hello@growthsparkweb.com
+                      customerservice@growthsparkweb.com
                     </span>
                   </div>
                 </a>
 
                 {/* LinkedIn Placeholder */}
                 <a
-                  href="https://linkedin.com"
+                  href="linkedin.com/in/sarojini-mangalam-5b47a7114"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="contact-linkedin-link"
@@ -175,14 +175,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       LinkedIn Network
                     </span>
                     <span className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                      linkedin.com/company/growthsparkweb
+                      linkedin.com/in/sarojini-mangalam-5b47a7114
                     </span>
                   </div>
                 </a>
 
                 {/* WhatsApp Placeholder */}
                 <a
-                  href="https://whatsapp.com"
+                  href="https://wa.me/919900263958"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="contact-whatsapp-link"
@@ -196,7 +196,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       WhatsApp Quick Chat
                     </span>
                     <span className="text-sm font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
-                      +1 (555) 019-2834 (WhatsApp)
+                      +91 9900263958 (WhatsApp)
                     </span>
                   </div>
                 </a>
